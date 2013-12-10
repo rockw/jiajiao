@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-9-5 16:13:57 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.orm.TutorInfo" table="TUTORINFO">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="hibernate.orm.User" fetch="join">
+            <column name="USER" />
+        </many-to-one>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        <property name="eduDegree" type="java.lang.String">
+            <column name="EDUDEGREE" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="age" type="java.lang.String">
+            <column name="AGE" />
+        </property>
+        <property name="way" type="java.lang.String">
+            <column name="WAY" />
+        </property>
+        <property name="techTime" type="java.lang.String">
+            <column name="TECHTIME" />
+        </property>
+        <property name="loginTime" type="java.util.Date">
+            <column name="LOGINTIME" />
+        </property>
+        <property name="identy" type="java.lang.String">
+            <column name="IDENTY" />
+        </property>
+    </class>
+</hibernate-mapping>

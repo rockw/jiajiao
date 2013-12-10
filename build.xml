@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jiajiaoweb" default="hbm2java">  
+    <property name="sourcedir" value="${basedir}"/>  
+    <property name="javabeandir" value="${basedir}/src/"/>  
+    <property name="ddlsqldir" value="${basedir}"/>  
+    <!--我放包的目录，根据个人情况进行修改-->  
+    <property name="librarydir" value="${basedir}/WebContent/WEB-INF/lib/"/>  
+    <path id="libraries">  
+       <pathelement location="${sourcedir}" />  
+       <fileset dir="${librarydir}">  
+            <include name="*.jar"/>  
+        </fileset>  
+    </path>  
+
+	 <!-- create .java form  *.hbm.xml -->  
+    <target name="hbm2java"  
+        description="Generate Java source from the O/R mapping files">  
+        <taskdef name="hbm2java"   
+            classname="org.hibernate.tool.ant.HibernateToolTask"   
+            classpathref="libraries"/>  
+            <hbm2java destdir="${javabeandir}">  
+                <configuration configurationfile="${basedir}/hibernate.cfg.xml" />    
+                <hbm2java  jdk5="true"/>              	
+                <!-- <cfg2hbm/> -->   
+            </hbm2java>    
+    </target>  
+    
+     <!-- create ddl form  *.hbm.xml -->  
+    <target name="hbm2ddl"    
+            description="Generate DB schema from the O/R mapping files">  
+        <taskdef name="hbm2ddl"   
+            classname="org.hibernate.tool.ant.HibernateToolTask"   
+            classpathref="libraries"/>  
+        <hbm2ddl destdir="${ddlsqldir}">  
+            <configuration configurationfile="${basedir}/hibernate.cfg.xml" />   
+            <hbm2ddl export="true" console="false" create="true" update="false" drop="false" outputfilename="ddl.sql"/>   
+        </hbm2ddl>     
+    </target>  
+</project>  
