@@ -78,18 +78,40 @@
 
 </head>
 <body>
-	
-      <jsp:include page="headblock.jsp"></jsp:include>
+	<header class="header_wrapper"><!--header_wrapper Start-->
+		<div class="header"><!--header Start-->
+			<div class="logo fltleft">
+				<a href="#"><img src="img/logo.png" alt="" /></a>
+			</div>
+			<div class="navigation fltright">
+				<!--navigation Start-->
+				<ul class="sf-menu">
+					<li class="active"><a href="index.jsp">首页</a></li>
+					<li><a href="main.jsp">家教</a></li>
+                    <li id="nosep"><a href="register.jsp">注册</a></li>
+                    <li id="nosep"><a href="login.jsp">登录</a></li>
+					<li><a href="myacount.jsp">${username}</a>
+						<ul>
+							<li><a href="#">My Account</a></li>
+							<li><a href="#">Billing Settings</a></li>
+							<li><a href="#">Notifications</a></li>
+						</ul>
+					</li>		            
+				</ul>
+			</div>
+			<!--navigation End-->
+		</div>
+		<!--header End-->
+
+	</header>
+	<!--header_wrapper End-->
 
 	<div>
 		<menu></menu>
 	</div>
-	<h4>${userid}</h4>
-	<h4>${email}</h4>
-	<h4>${username}</h4>
-	<h4>${mobile}</h4>
-	
-	
+	<div>
+		
+	</div>
 	<footer class="footerwrapper1"> <!--footerwrapper_bottom Start-->
         <section class="footer_main"> <!--footer_main Start-->
             <section class="footer_top"> 
